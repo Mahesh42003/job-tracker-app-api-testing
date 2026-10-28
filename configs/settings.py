@@ -6,3 +6,5 @@ import os
 #https://test.jobtraking.com
 #https://localhost:3050/
 BASE_URL=os.getenv("BASE_URL","http://localhost:3050")
+DEFAULT_EMAIL="student@example1.com"
+DEFAULT_PASSWORD="12345678"
