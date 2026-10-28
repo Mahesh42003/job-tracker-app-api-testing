@@ -1,7 +1,8 @@
 import requests
+from configs.settings import BASE_URL
 def test_verify_public_demo_stats():
     
-    url="http://localhost:3050/api/v1/public/demo-stats"
+    url=f"{BASE_URL}/api/v1/public/demo-stats"
     response=requests.get(url)
     status_code=response.status_code 
     assert status_code == 200
