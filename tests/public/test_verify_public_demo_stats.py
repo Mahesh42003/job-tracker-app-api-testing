@@ -1,17 +1,16 @@
 import requests
 from configs.settings import BASE_URL
+from clients.api_client import APIClient
 def test_verify_public_demo_stats():
     
     url=f"{BASE_URL}/api/v1/public/demo-stats"
-    response=requests.get(url)
-    status_code=response.status_code 
-    assert status_code == 200
-    #checking data-type is correct or not 
-    response_body=response.json()
-    assert len(response_body.keys()) == 2
-    assert isinstance(response_body["total_seeded_applications"],int)
-    assert isinstance(response_body["status_counts"],dict) 
-    status_counts=response_body["status_counts"]
+    api_client=APIClient()
+    response=api_client.get_data(url)
+    assert len(response.keys()) == 2
+    assert isinstance(response["total_seeded_applications"],int)
+    assert isinstance(response["status_counts"],dict) 
+    status_counts=response["status_counts"]
+    breakpoint()
 
     for k,v in status_counts.items():
         print(f"{k},{v}")
