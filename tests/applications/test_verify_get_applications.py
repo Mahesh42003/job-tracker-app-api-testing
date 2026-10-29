@@ -13,5 +13,4 @@ def test_verify_authenticated_user_can_get_applications():
         "Authorization":f"Bearer {bearer_token}"
     }
     response=requests.get(f"{BASE_URL}/api/v1/applications",headers=headers)
-    breakpoint()
     assert isinstance(response.json(),list)
