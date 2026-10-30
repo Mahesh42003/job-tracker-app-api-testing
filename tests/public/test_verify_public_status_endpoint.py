@@ -1,5 +1,6 @@
 import requests
 def test_verify_public_status_endpoint():
+    """Verify the public status endpoint and its service metadata."""
     url='http://localhost:3050/api/v1/public/status'
     response=requests.get(url)
     status_code=response.status_code

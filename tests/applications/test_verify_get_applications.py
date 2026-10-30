@@ -1,5 +1,6 @@
 from clients.api_client import APIClient
 def test_verify_authenticated_user_can_get_applications():
+    """Verify an authenticated user can retrieve applications as a list."""
     #get jwt_token
     #login with user and get the token from response
     #make the api call with token in the header

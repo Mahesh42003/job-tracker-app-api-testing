@@ -1,6 +1,7 @@
 import requests
 from clients.api_client import APIClient
 def test_verify_public_demo_stats():
+    """Verify the demo stats response contains fields with expected types."""
     
     url=f"/api/v1/public/demo-stats"
     api_client=APIClient()

@@ -2,6 +2,7 @@ import requests
 from clients.api_client import APIClient
 api_client=APIClient()
 def test_verify_user_can_login_with_valid_credentials():
+    """Verify valid credentials return the expected user's email."""
     payload={
     "email": "admin@example.com",
     "password": "AdminPassword123!"
@@ -11,6 +12,7 @@ def test_verify_user_can_login_with_valid_credentials():
     assert data["user"]["email"] == payload["email"]
     
 def test_verify_user_can_login_with_invalid_credentials():
+    """Verify invalid credentials return an invalid-credentials error."""
     payload={
         "email": "admin@example.com",
         "password": "AdminPassword123"
