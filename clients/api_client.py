@@ -156,7 +156,21 @@ class APIClient:
         self.verify_status_code(response, expected_status_code, url)
 
         return response
+    def delete(self,endpoint,expected_status_code):
+        self.url=self.build_url(endpoint)
+        response=requests.delete(self.url,headers=self.headers)
+        self.verify_status_code(response,expected_status_code,self.url)
+        return response
+    def patch_data(self,endpoint,body,expected_status_code,headers=None):
+        url=self.build_url(endpoint) 
+        response = requests.patch(
+            url,
+            json=body,
+            headers=self.build_headers(headers)
+        )
 
+        self.verify_status_code(response, expected_status_code, url)
+        return response
     def build_headers(self, headers=None):
         """Combine client headers with optional request-specific headers.
 
