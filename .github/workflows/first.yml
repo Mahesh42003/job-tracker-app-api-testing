@@ -1,5 +1,5 @@
 #name of the file
-name:QA Automation
+name: QA Automation
 #When to execute 
 on:
   push:
